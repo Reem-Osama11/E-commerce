@@ -1,0 +1,24 @@
+/* @layer base {
+  button {
+    padding: 20px !important; 
+  }
+} */
+@import "tailwindcss";
+@source "../src/**/*.{js,jsx,ts,tsx}";
+.product-swiper .swiper-button-next,
+.product-swiper .swiper-button-prev {
+  color: #22c55e;
+  background: rgba(255, 255, 255, 0.8);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+body {
+  margin: 0;
+}
