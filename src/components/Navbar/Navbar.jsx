@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
    let {userloginauth,setuserloginauth }=useContext(userLogin)
       let {cartCount }=useContext(UserContext)
-
+console.log(cartCount)
 
 
    function logout(){
@@ -102,13 +102,14 @@ export default function Navbar() {
 
           
               </> : <>
+
     <NavLink
       to="cart"
-      className="relative text-gray-500 hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+      className="relative text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
     >
       <i className="fa-solid fa-cart-shopping text-lg"></i>
       {cartCount > 0 && (
-        <span className="absolute -top-2 -right-3 bg-green-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+        <span className="absolute -top-2 -right-3 flex h-4 w-4 items-center justify-center rounded-full bg-green-500 text-[10px] font-bold text-white">
           {cartCount}
         </span>
       )}
@@ -171,7 +172,17 @@ export default function Navbar() {
               {userloginauth !== null ? 
           <>
             <li><NavLink to="" onClick={() => setIsOpen(false)}>Home</NavLink></li>
-            <li><NavLink to="cart" onClick={() => setIsOpen(false)}>Cart</NavLink></li>
+            <li>
+              <NavLink to="cart" onClick={() => setIsOpen(false)} className="relative inline-flex items-center gap-2">
+                <i className="fa-solid fa-cart-shopping text-lg"></i>
+                Cart
+                {cartCount > 0 && (
+                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-green-500 text-[10px] font-bold text-white">
+                    {cartCount}
+                  </span>
+                )}
+              </NavLink>
+            </li>
             <li><NavLink to="products" onClick={() => setIsOpen(false)}>Products</NavLink></li>
             <li><NavLink to="categories" onClick={() => setIsOpen(false)}>Categories</NavLink></li>
             <li><NavLink to="brands" onClick={() => setIsOpen(false)}>Brands</NavLink></li>

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../Context/UserContext';
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
   let { getcartitems , removeitems , updateCartCount } = useContext(UserContext);
@@ -186,6 +187,9 @@ async function updateitems(productId,count) {
                 </tbody>
               </table>
             </div>
+            <Link to='/checkout'>                      
+                <button className='w-full mt-3 bg-green-700 rounded-md py-2 text-white text-sm font-medium transition-colors duration-300'>check out</button>
+</Link>
           </>
         )}
 

@@ -22,6 +22,8 @@ import UserContextProvider from './Context/UserContext'
 import { Toaster } from 'react-hot-toast'
 import Branddetail from './components/BrandDetails/Branddetail'
 import Forgetpassword from './components/Forgetpassword/Forgetpassword'
+import Checkout from './components/Checkout/Checkout'
+import Allorders from './components/Allorders/Allorders'
 function App() {
   const [count, setCount] = useState(0)
   
@@ -42,7 +44,10 @@ let x=createBrowserRouter([
     {path:'categories',element:<Protectedroute><Categories/></Protectedroute>},
     {path:'productdetails/:id/:category',element:<Protectedroute><Productdetails></Productdetails></Protectedroute>},
     {path:'branddetail/:id',element:<Protectedroute><Branddetail></Branddetail></Protectedroute>},
-  {path:'forgetpassword',element:<Forgetpassword></Forgetpassword>} 
+  {path:'forgetpassword',element:<Forgetpassword></Forgetpassword>} ,
+    {path:'/checkout',element:<Protectedroute><Checkout></Checkout></Protectedroute>} ,
+    {path:'/allorders',element:<Protectedroute><Allorders></Allorders></Protectedroute>} ,
+
 
   ]}
 ])

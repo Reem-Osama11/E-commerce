@@ -10,7 +10,7 @@ export default function Recentproduct() {
   function getproducts() {
     return axios.get("https://ecommerce.routemisr.com/api/v1/products");
   }
-
+let {setCartCount}=useContext(UserContext)
   const { data, isLoading, error } = useQuery({
     queryKey: ["recentproduct"],
     queryFn: getproducts,
@@ -30,7 +30,7 @@ export default function Recentproduct() {
     console.log(response);
 
     setAddedProductId(productId);
-   
+  //  setCartCount(response.data)
   }
 
   if (isLoading) {

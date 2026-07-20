@@ -5,6 +5,7 @@ export let UserContext = createContext();
 
 export default function UserContextProvider(props) {
   let [cartCount, setCartCount] = useState(0);
+  let [cartId, setCartId] = useState(null);
 
   let headers = {
     token: localStorage.getItem("usertoken"),
@@ -20,6 +21,7 @@ export default function UserContextProvider(props) {
       .then((response) => {
         console.log(response);
         setCartCount(response.data.numOfCartItems);
+        setCartId(response.data.cartId);
         return response;
       })
       .catch((error) => {
@@ -34,6 +36,7 @@ export default function UserContextProvider(props) {
       .then((response) => {
         console.log(response);
         setCartCount(response.data.numOfCartItems);
+        setCartId(response.data.cartId);
         return response;
       })
       .catch((error) => error);
@@ -45,6 +48,7 @@ export default function UserContextProvider(props) {
       .then((response) => {
         console.log(response);
         setCartCount(response.data.numOfCartItems);
+        setCartId(response.data.cartId);
         return response;
       })
       .catch((error) => {
@@ -63,11 +67,28 @@ export default function UserContextProvider(props) {
       .then((response) => {
         toast.success(response.data.message);
         setCartCount(response.data.numOfCartItems);
+        setCartId(response.data.cartId);
         return response;
       })
       .catch((error) => {
         toast.error("حدث خطأ أثناء الإضافة");
         return error;
+      });
+  }
+
+   function checkout(cartId , url , formvalues) {
+    return axios
+      .post(
+       ` https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${url}`,
+        {     shippingAddress: formvalues},
+        { headers }
+      )
+      .then((response) => {
+console.log(response)
+      return response; // ✅ مهم جدًا
+      })
+      .catch((error) => {
+console.log(error)
       });
   }
 
@@ -79,7 +100,7 @@ export default function UserContextProvider(props) {
 
   return (
     <UserContext.Provider
-      value={{ addtocart, getcartitems, removeitems, updateCartCount, cartCount, setCartCount }}
+      value={{ addtocart, getcartitems, removeitems, updateCartCount, cartCount, setCartCount, cartId, checkout }}
     >
       {props.children}
     </UserContext.Provider>
