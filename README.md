@@ -18,7 +18,7 @@ A modern, responsive e-commerce platform with product browsing by category and b
 
 <div align="center">
 
-![FreshCart home page](./screenshots/home.png)
+![FreshCart home page](./screenshots/d828d6ce-621b-47c9-bf8a-a2e8800168e7.png)
 
 </div>
 
