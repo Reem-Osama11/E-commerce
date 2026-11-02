@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🛒 E-Commerce Web Application
+# 🛒 FreshCart | E-Commerce Web Application
 
-A modern, responsive e-commerce platform with product filtering, cart management and user authentication.
+A modern, responsive e-commerce platform with product browsing by category and brand, cart management and user authentication.
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-View_Project-0A66C2?style=for-the-badge&logo=vercel&logoColor=white)](https://e-commerce-seven-eosin-51.vercel.app)
 
@@ -16,16 +16,20 @@ A modern, responsive e-commerce platform with product filtering, cart management
 
 ## 📸 Preview
 
-<!-- Add 1-2 screenshots of the app (home page, cart). Put the images in a /screenshots folder. -->
-![Home page](./screenshots/home.png)
+<div align="center">
+
+![FreshCart home page](./screenshots/home.png)
+
+</div>
 
 ---
 
 ## ✨ Features
 
-- **Product browsing and filtering** by category
-- **Cart management**: add, remove and update items
-- **Authentication**: sign up and log in
+- **Product browsing and filtering** across Products, Categories and Brands pages
+- **Popular categories carousel** and a promotional banner slider on the home page
+- **Cart management** with a live item counter in the navbar
+- **Authentication**: log in and log out
 - **Responsive design** that works across mobile, tablet and desktop
 - **Efficient data fetching and caching** with TanStack Query
 
