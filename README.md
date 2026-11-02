@@ -4,7 +4,7 @@
 
 A modern, responsive e-commerce platform with product browsing by category and brand, cart management and user authentication.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Project-0A66C2?style=for-the-badge&logo=vercel&logoColor=white)](https://e-commerce-seven-eosin-51.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-0A66C2?style=for-the-badge&logo=vercel&logoColor=white)](https://e-commerce-seven-eosin-51.vercel.app)
 
 ![React](https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TanStack Query](https://img.shields.io/badge/TanStack_Query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white)
